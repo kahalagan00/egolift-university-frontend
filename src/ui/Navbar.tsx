@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { COMPANY_LOGO } from "../utils/constants";
+import { NavLink } from "react-router-dom";
 
 const NavBar: React.FC = () => {
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -13,7 +14,7 @@ const NavBar: React.FC = () => {
             {/* Mobile menu button */}
             <button
               type="button"
-              className={`relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white ${
+              className={`relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-sky-700 hover:text-white ${
                 showMobileMenu && "ring-2 ring-white outline-hidden ring-inset"
               }`}
               aria-controls="mobile-menu"
@@ -28,14 +29,14 @@ const NavBar: React.FC = () => {
                 className="block size-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
                 data-slot="icon"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
@@ -45,14 +46,14 @@ const NavBar: React.FC = () => {
                 className="hidden size-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
                 data-slot="icon"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M6 18 18 6M6 6l12 12"
                 />
               </svg>
@@ -68,31 +69,34 @@ const NavBar: React.FC = () => {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                <a
-                  href="#"
+                <NavLink
+                  to={"/dashboard"}
                   className="rounded-md hover:bg-sky-700 px-3 py-2 text-sm font-medium text-white"
                   aria-current="page"
                 >
                   Dashboard
-                </a>
-                <a
-                  href="#"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-700 "
+                </NavLink>
+                <NavLink
+                  to={"/workouts"}
+                  className="rounded-md hover:bg-sky-700 px-3 py-2 text-sm font-medium text-white"
+                  aria-current="page"
                 >
                   Workouts
-                </a>
-                <a
-                  href="#"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-700 "
+                </NavLink>
+                <NavLink
+                  to={"/exercises"}
+                  className="rounded-md hover:bg-sky-700 px-3 py-2 text-sm font-medium text-white"
+                  aria-current="page"
                 >
                   Exercises
-                </a>
-                <a
-                  href="#"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-700 hover:text-white"
+                </NavLink>
+                <NavLink
+                  to={"/users"}
+                  className="rounded-md hover:bg-sky-700 px-3 py-2 text-sm font-medium text-white"
+                  aria-current="page"
                 >
                   Users
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -107,14 +111,14 @@ const NavBar: React.FC = () => {
                 className="size-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
                 data-slot="icon"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
                 />
               </svg>
@@ -201,31 +205,34 @@ const NavBar: React.FC = () => {
       >
         <div className="space-y-1 px-2 pt-2 pb-3">
           {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-          <a
-            href="#"
-            className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+          <NavLink
+            to={"/dashboard"}
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-700"
             aria-current="page"
           >
             Dashboard
-          </a>
-          <a
-            href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          </NavLink>
+          <NavLink
+            to={"/workouts"}
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-700"
+            aria-current="page"
           >
             Workouts
-          </a>
-          <a
-            href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          </NavLink>
+          <NavLink
+            to={"/exercises"}
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-700"
+            aria-current="page"
           >
             Exercises
-          </a>
-          <a
-            href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          </NavLink>
+          <NavLink
+            to={"/users"}
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-700"
+            aria-current="page"
           >
             Users
-          </a>
+          </NavLink>
         </div>
       </div>
     </nav>

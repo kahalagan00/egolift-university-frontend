@@ -16,9 +16,9 @@ const ExercisesPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-8 gap-4 max-w-full flex flex-col items-center">
-      {exercises.map((exercise) => (
-        <ExerciseProfile exercise={exercise} />
+    <div className="flex max-w-full flex-col items-center gap-4 p-8">
+      {exercises.map((exercise, idx) => (
+        <ExerciseProfile key={idx} exercise={exercise} />
       ))}
     </div>
   );

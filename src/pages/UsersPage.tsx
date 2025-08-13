@@ -16,9 +16,9 @@ const UsersPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-8 gap-4 max-w-full flex flex-col items-center">
-      {users.map((user) => (
-        <UserProfile user={user} />
+    <div className="flex max-w-full flex-col items-center gap-4 p-8">
+      {users.map((user, idx) => (
+        <UserProfile key={idx} user={user} />
       ))}
     </div>
   );
